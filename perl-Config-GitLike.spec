@@ -1,24 +1,24 @@
 %define upstream_name    Config-GitLike
 %define upstream_version 1.05
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Git-like config file parsing with cascaded inheritance
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Git-like config file parsing with cascaded inheritance
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Any::Moose)
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(File::Spec)
-BuildRequires: perl(File::Temp)
-BuildRequires: perl(Test::Exception)
-BuildRequires: perl(Test::More)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Any::Moose)
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(File::Spec)
+BuildRequires:	perl(File::Temp)
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Test::More)
+BuildArch:	noarch
 
 %description
 This module handles interaction with configuration files of the style used
@@ -44,24 +44,33 @@ By default, configuration files that don't exist are just skipped.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc META.yml Changes
 %{_mandir}/man3/*
-%perl_vendorlib/Config/
+%{perl_vendorlib}/Config/
+
+%changelog
+* Sat May 28 2011 Funda Wang <fwang@mandriva.org> 1.50.0-2mdv2011.0
++ Revision: 680840
+- mass rebuild
+
+* Fri Jan 07 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.50.0-1mdv2011.0
++ Revision: 629480
+- update to new version 1.05
+
+* Fri Apr 30 2010 Michael Scherer <misc@mandriva.org> 1.40.0-1mdv2011.0
++ Revision: 541093
+- import perl-Config-GitLike
 
 
+* Fri Apr 30 2010 cpan2dist 1.04-1mdv
+- initial mdv release, generated with cpan2dist
