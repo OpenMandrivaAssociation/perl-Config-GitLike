@@ -1,4 +1,5 @@
 removed_sources:
   Config-GitLike-1.05.tar.gz: 18277b6fd013c5c55346e3031b71e7d255703f6e
-sources:
   Config-GitLike-1.10.tar.gz: 495f88aa97273652230c9fb7d12bad109740447b
+sources:
+  Config-GitLike-1.12.tar.gz: cf3906f76ea7a1761a304d97bd4f60f54a312b18
