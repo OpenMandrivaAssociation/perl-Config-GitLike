@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 1.10
-Release:	1
+Release:	2
 
 Summary:	Git-like config file parsing with cascaded inheritance
 License:	GPL+ or Artistic
