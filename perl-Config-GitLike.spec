@@ -1,15 +1,15 @@
 %define upstream_name    Config-GitLike
-%define upstream_version 1.10
+%define upstream_version 1.18
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 1.10
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Git-like config file parsing with cascaded inheritance
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Config/Config-GitLike-1.10.tar.gz
+Url:		https://github.com/bestpractical/config-gitlike
+Source0:	https://cpan.metacpan.org/authors/id/A/AL/ALEXMV/Config-GitLike-1.18.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
