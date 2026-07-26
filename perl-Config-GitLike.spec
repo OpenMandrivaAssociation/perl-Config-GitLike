@@ -1,9 +1,7 @@
 %define upstream_name    Config-GitLike
-%define upstream_version 1.18
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.18
+Release:	2
 
 Summary:	Git-like config file parsing with cascaded inheritance
 License:	GPL+ or Artistic
@@ -42,7 +40,7 @@ overriding methods you can obtain any combination of configuration files.
 By default, configuration files that don't exist are just skipped.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
